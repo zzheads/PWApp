@@ -8,22 +8,62 @@
 
 /* Begin PBXBuildFile section */
 		A69945FD212EDB46005B9189 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69945FC212EDB46005B9189 /* AppDelegate.swift */; };
-		A69945FF212EDB46005B9189 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69945FE212EDB46005B9189 /* ViewController.swift */; };
+		A69945FF212EDB46005B9189 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69945FE212EDB46005B9189 /* LoginViewController.swift */; };
 		A6994602212EDB46005B9189 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6994600212EDB46005B9189 /* Main.storyboard */; };
 		A6994604212EDB46005B9189 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6994603212EDB46005B9189 /* Assets.xcassets */; };
 		A6994607212EDB46005B9189 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6994605212EDB46005B9189 /* LaunchScreen.storyboard */; };
 		A699460F212EDB59005B9189 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A699460E212EDB59005B9189 /* README.md */; };
+		A6994614212EDC0E005B9189 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A6994613212EDC0E005B9189 /* Podfile */; };
+		A6994616212EDC3B005B9189 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6994615212EDC3B005B9189 /* Default-568h@2x.png */; };
+		A6994619212EDDA2005B9189 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6994618212EDDA2005B9189 /* User.swift */; };
+		A699461C212EDF30005B9189 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699461B212EDF30005B9189 /* JSON.swift */; };
+		A699461E212EE0A0005B9189 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699461D212EE0A0005B9189 /* Resource.swift */; };
+		A6994620212EE803005B9189 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699461F212EE803005B9189 /* WebService.swift */; };
+		A6994622212EF39D005B9189 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6994621212EF39D005B9189 /* Token.swift */; };
+		A6994624212F188D005B9189 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6994623212F188D005B9189 /* Transaction.swift */; };
+		A6994626212F1E0C005B9189 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6994625212F1E0C005B9189 /* UserInfo.swift */; };
+		A6994628212F1F2F005B9189 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6994627212F1F2F005B9189 /* UserList.swift */; };
+		A699462A212F2031005B9189 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6994629212F2031005B9189 /* APIError.swift */; };
+		A6994633212F2D5B005B9189 /* RobotoCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A699462C212F2D5B005B9189 /* RobotoCondensed-BoldItalic.ttf */; };
+		A6994634212F2D5B005B9189 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A699462D212F2D5B005B9189 /* RobotoCondensed-Light.ttf */; };
+		A6994635212F2D5B005B9189 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A699462E212F2D5B005B9189 /* RobotoCondensed-Bold.ttf */; };
+		A6994636212F2D5B005B9189 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A699462F212F2D5B005B9189 /* RobotoCondensed-Italic.ttf */; };
+		A6994637212F2D5B005B9189 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6994630212F2D5B005B9189 /* RobotoCondensed-Regular.ttf */; };
+		A6994638212F2D5B005B9189 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = A6994631212F2D5B005B9189 /* LICENSE.txt */; };
+		A6994639212F2D5B005B9189 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6994632212F2D5B005B9189 /* RobotoCondensed-LightItalic.ttf */; };
+		FBB5A9A1FDA4844A15EEF657 /* Pods_Parrot_Wings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3B83EE5E1C72E4A565C236 /* Pods_Parrot_Wings.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E3B83EE5E1C72E4A565C236 /* Pods_Parrot_Wings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parrot_Wings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		821F20CB13A959FCC4DA04D0 /* Pods-Parrot Wings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parrot Wings.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parrot Wings/Pods-Parrot Wings.debug.xcconfig"; sourceTree = "<group>"; };
 		A69945F9212EDB46005B9189 /* Parrot Wings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Parrot Wings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A69945FC212EDB46005B9189 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A69945FE212EDB46005B9189 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A69945FE212EDB46005B9189 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A6994601212EDB46005B9189 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6994603212EDB46005B9189 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6994606212EDB46005B9189 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6994608212EDB46005B9189 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A699460E212EDB59005B9189 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A6994613212EDC0E005B9189 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A6994615212EDC3B005B9189 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A6994618212EDDA2005B9189 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A699461B212EDF30005B9189 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		A699461D212EE0A0005B9189 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		A699461F212EE803005B9189 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		A6994621212EF39D005B9189 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		A6994623212F188D005B9189 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		A6994625212F1E0C005B9189 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		A6994627212F1F2F005B9189 /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
+		A6994629212F2031005B9189 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		A699462C212F2D5B005B9189 /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
+		A699462D212F2D5B005B9189 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
+		A699462E212F2D5B005B9189 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		A699462F212F2D5B005B9189 /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
+		A6994630212F2D5B005B9189 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		A6994631212F2D5B005B9189 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		A6994632212F2D5B005B9189 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
+		F718EE69B197C73BA23AFDB3 /* Pods-Parrot Wings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parrot Wings.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parrot Wings/Pods-Parrot Wings.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBB5A9A1FDA4844A15EEF657 /* Pods_Parrot_Wings.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,9 +82,11 @@
 			isa = PBXGroup;
 			children = (
 				A699460E212EDB59005B9189 /* README.md */,
+				A6994613212EDC0E005B9189 /* Podfile */,
 				A69945FB212EDB46005B9189 /* Parrot Wings */,
-				A6994603212EDB46005B9189 /* Assets.xcassets */,
 				A69945FA212EDB46005B9189 /* Products */,
+				DC0C4E145E56141C115AD03B /* Pods */,
+				FA3A58B3281BEE1BA14DF01A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,9 +101,12 @@
 		A69945FB212EDB46005B9189 /* Parrot Wings */ = {
 			isa = PBXGroup;
 			children = (
+				A699461A212EDEFE005B9189 /* API */,
 				A6994610212EDB61005B9189 /* Model */,
 				A6994611212EDB69005B9189 /* View */,
 				A6994612212EDB70005B9189 /* Helpers */,
+				A6994617212EDD73005B9189 /* Assets */,
+				A6994608212EDB46005B9189 /* Info.plist */,
 			);
 			path = "Parrot Wings";
 			sourceTree = "<group>";
@@ -68,6 +114,12 @@
 		A6994610212EDB61005B9189 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A6994618212EDDA2005B9189 /* User.swift */,
+				A6994621212EF39D005B9189 /* Token.swift */,
+				A6994623212F188D005B9189 /* Transaction.swift */,
+				A6994625212F1E0C005B9189 /* UserInfo.swift */,
+				A6994627212F1F2F005B9189 /* UserList.swift */,
+				A6994629212F2031005B9189 /* APIError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -75,7 +127,7 @@
 		A6994611212EDB69005B9189 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A69945FE212EDB46005B9189 /* ViewController.swift */,
+				A69945FE212EDB46005B9189 /* LoginViewController.swift */,
 				A6994600212EDB46005B9189 /* Main.storyboard */,
 				A6994605212EDB46005B9189 /* LaunchScreen.storyboard */,
 			);
@@ -85,10 +137,60 @@
 		A6994612212EDB70005B9189 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A699461B212EDF30005B9189 /* JSON.swift */,
 				A69945FC212EDB46005B9189 /* AppDelegate.swift */,
-				A6994608212EDB46005B9189 /* Info.plist */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A6994617212EDD73005B9189 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A699462B212F2D3E005B9189 /* Font */,
+				A6994603212EDB46005B9189 /* Assets.xcassets */,
+				A6994615212EDC3B005B9189 /* Default-568h@2x.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		A699461A212EDEFE005B9189 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A699461D212EE0A0005B9189 /* Resource.swift */,
+				A699461F212EE803005B9189 /* WebService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		A699462B212F2D3E005B9189 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				A6994631212F2D5B005B9189 /* LICENSE.txt */,
+				A699462E212F2D5B005B9189 /* RobotoCondensed-Bold.ttf */,
+				A699462C212F2D5B005B9189 /* RobotoCondensed-BoldItalic.ttf */,
+				A699462F212F2D5B005B9189 /* RobotoCondensed-Italic.ttf */,
+				A699462D212F2D5B005B9189 /* RobotoCondensed-Light.ttf */,
+				A6994632212F2D5B005B9189 /* RobotoCondensed-LightItalic.ttf */,
+				A6994630212F2D5B005B9189 /* RobotoCondensed-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		DC0C4E145E56141C115AD03B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				821F20CB13A959FCC4DA04D0 /* Pods-Parrot Wings.debug.xcconfig */,
+				F718EE69B197C73BA23AFDB3 /* Pods-Parrot Wings.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA3A58B3281BEE1BA14DF01A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E3B83EE5E1C72E4A565C236 /* Pods_Parrot_Wings.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,9 +200,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A699460B212EDB46005B9189 /* Build configuration list for PBXNativeTarget "Parrot Wings" */;
 			buildPhases = (
+				879D50313FCEA6CEFCAD35F2 /* [CP] Check Pods Manifest.lock */,
 				A69945F5212EDB46005B9189 /* Sources */,
 				A69945F6212EDB46005B9189 /* Frameworks */,
 				A69945F7212EDB46005B9189 /* Resources */,
+				833F94CFBCF1AFB5107F6A9A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,22 +253,85 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6994638212F2D5B005B9189 /* LICENSE.txt in Resources */,
+				A6994633212F2D5B005B9189 /* RobotoCondensed-BoldItalic.ttf in Resources */,
+				A6994614212EDC0E005B9189 /* Podfile in Resources */,
+				A6994634212F2D5B005B9189 /* RobotoCondensed-Light.ttf in Resources */,
+				A6994639212F2D5B005B9189 /* RobotoCondensed-LightItalic.ttf in Resources */,
+				A6994637212F2D5B005B9189 /* RobotoCondensed-Regular.ttf in Resources */,
+				A6994635212F2D5B005B9189 /* RobotoCondensed-Bold.ttf in Resources */,
 				A6994607212EDB46005B9189 /* LaunchScreen.storyboard in Resources */,
 				A6994604212EDB46005B9189 /* Assets.xcassets in Resources */,
 				A699460F212EDB59005B9189 /* README.md in Resources */,
 				A6994602212EDB46005B9189 /* Main.storyboard in Resources */,
+				A6994616212EDC3B005B9189 /* Default-568h@2x.png in Resources */,
+				A6994636212F2D5B005B9189 /* RobotoCondensed-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		833F94CFBCF1AFB5107F6A9A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Parrot Wings/Pods-Parrot Wings-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Parrot Wings/Pods-Parrot Wings-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		879D50313FCEA6CEFCAD35F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Parrot Wings-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A69945F5212EDB46005B9189 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A69945FF212EDB46005B9189 /* ViewController.swift in Sources */,
+				A6994628212F1F2F005B9189 /* UserList.swift in Sources */,
+				A6994620212EE803005B9189 /* WebService.swift in Sources */,
+				A6994622212EF39D005B9189 /* Token.swift in Sources */,
+				A6994624212F188D005B9189 /* Transaction.swift in Sources */,
+				A69945FF212EDB46005B9189 /* LoginViewController.swift in Sources */,
 				A69945FD212EDB46005B9189 /* AppDelegate.swift in Sources */,
+				A6994619212EDDA2005B9189 /* User.swift in Sources */,
+				A699461E212EE0A0005B9189 /* Resource.swift in Sources */,
+				A6994626212F1E0C005B9189 /* UserInfo.swift in Sources */,
+				A699461C212EDF30005B9189 /* JSON.swift in Sources */,
+				A699462A212F2031005B9189 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +473,7 @@
 		};
 		A699460C212EDB46005B9189 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 821F20CB13A959FCC4DA04D0 /* Pods-Parrot Wings.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -323,6 +491,7 @@
 		};
 		A699460D212EDB46005B9189 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F718EE69B197C73BA23AFDB3 /* Pods-Parrot Wings.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
