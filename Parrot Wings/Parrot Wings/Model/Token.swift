@@ -8,16 +8,10 @@
 
 import Alamofire
 
-class Token: Codable {
+struct Token: Codable {
     let id_token    : String
-    
-    init(_ id_token: String) {
-        self.id_token = id_token
-    }
-}
 
-extension Token {
     var header: HTTPHeaders {
-        return ["Authorization":"Bearer=\(self.id_token)"]
+        return ["Authorization": "Bearer \(self.id_token)"]
     }
 }

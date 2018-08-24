@@ -23,7 +23,7 @@ final class WebService {
                     seal.fulfill(object)
                     
                 case .failure(let error):
-                    seal.reject(self.detailedError(error: error, response: response))
+                    seal.reject(self.apiError(error: error, response: response))
                 }
             }
         }
@@ -38,7 +38,7 @@ final class WebService {
                     seal.fulfill(objects)
                     
                 case .failure(let error):
-                    seal.reject(self.detailedError(error: error, response: response))
+                    seal.reject(self.apiError(error: error, response: response))
                 }
             }
         }
@@ -46,18 +46,21 @@ final class WebService {
 }
 
 extension WebService {
-    func detailedError(error: Error, response: DataResponse<Any>) -> NSError {
-        let description: String? = error.localizedDescription
-        var reason: String? = nil
-        guard let httpResponse = response.response else {
-            if let data = response.data {
-                reason = "\(self): \(String(data: data, encoding: .utf8) ?? "")"
-            }
-            return NSError.apiError(description: description, reason: reason)
+    // Method to get correct reason why we have a error
+    // Alamofire expect receive JSON but got simple text error message, like "Invalid user or password"
+    // So we have update reason field in received error to
+    // show user usefull info whats wrong
+    
+    func apiError(error: Error, response: DataResponse<Any>) -> NSError {
+        let domain = "Parrot Wings API Error"
+        var code = 410
+        var userInfo = [NSLocalizedDescriptionKey: error.localizedDescription]
+        if let data = response.data, let description = String(data: data, encoding: .utf8) {
+            userInfo.updateValue(description, forKey: NSLocalizedDescriptionKey)
         }
-        if let data = response.data {
-            reason = "\(self): \(String(data: data, encoding: .utf8) ?? "")"
+        if let httpResponse = response.response {
+            code = httpResponse.statusCode
         }
-        return NSError.apiError(code: httpResponse.statusCode, description: description, reason: reason)
+        return NSError(domain: domain, code: code, userInfo: userInfo)
     }
 }

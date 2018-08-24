@@ -9,25 +9,17 @@
 import Foundation
 import Alamofire
 
-class User: Codable {
+struct User: Codable {
     var username: String
     var email   : String
     var password: String
-    
-    init(username: String, email: String, password: String) {
-        self.username = username
-        self.email = email
-        self.password = password
-    }
-}
 
-extension User {
     var create: Resource<Token> {
         return Resource<Token>(endpoint: "users", method: .post, parameters: self.toJSON)
     }
     
     var login: Resource<Token> {
-        return Resource<Token>(endpoint: "session/create", method: .post, parameters: ["username": self.username, "password": self.password])
+        return Resource<Token>(endpoint: "sessions/create", method: .post, parameters: ["email": self.email, "password": self.password])
     }
 }
 
