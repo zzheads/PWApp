@@ -38,6 +38,7 @@
 		A6994637212F2D5B005B9189 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6994630212F2D5B005B9189 /* RobotoCondensed-Regular.ttf */; };
 		A6994638212F2D5B005B9189 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = A6994631212F2D5B005B9189 /* LICENSE.txt */; };
 		A6994639212F2D5B005B9189 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6994632212F2D5B005B9189 /* RobotoCondensed-LightItalic.ttf */; };
+		A6CF53A82131D81E00F183EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CF53A72131D81E00F183EA /* Main.storyboard */; };
 		FBB5A9A1FDA4844A15EEF657 /* Pods_Parrot_Wings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3B83EE5E1C72E4A565C236 /* Pods_Parrot_Wings.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		A6994630212F2D5B005B9189 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		A6994631212F2D5B005B9189 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		A6994632212F2D5B005B9189 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
+		A6CF53A72131D81E00F183EA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F718EE69B197C73BA23AFDB3 /* Pods-Parrot Wings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parrot Wings.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parrot Wings/Pods-Parrot Wings.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +158,7 @@
 				A68F64162130000400A860BF /* UIElements.swift */,
 				A68F641A21301C2D00A860BF /* MainViewController.swift */,
 				A6293E3D2130AD4800B1AC67 /* TransactionViewController.swift */,
+				A6CF53A72131D81E00F183EA /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				A6994639212F2D5B005B9189 /* RobotoCondensed-LightItalic.ttf in Resources */,
 				A6994637212F2D5B005B9189 /* RobotoCondensed-Regular.ttf in Resources */,
 				A6293E3A2130A89300B1AC67 /* TransactionCell.xib in Resources */,
+				A6CF53A82131D81E00F183EA /* Main.storyboard in Resources */,
 				A6994635212F2D5B005B9189 /* RobotoCondensed-Bold.ttf in Resources */,
 				A6994607212EDB46005B9189 /* LaunchScreen.storyboard in Resources */,
 				A6994604212EDB46005B9189 /* Assets.xcassets in Resources */,

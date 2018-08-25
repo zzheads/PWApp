@@ -10,7 +10,7 @@ import UIKit
 import Material
 
 class TransactionViewController: UIViewController {
-    var userInfo        : UserInfo? { didSet { self.userInfoLabel = self.userInfo?.label } }
+    var userInfo        : UserInfo? { didSet {  } }
     var userInfoLabel   : UILabel?
     let cancelButton = UIElements.raisedButton("Cancel")
     let transactionButton = UIElements.raisedButton("Make Transaction")

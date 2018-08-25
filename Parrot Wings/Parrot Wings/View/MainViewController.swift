@@ -10,29 +10,26 @@ import UIKit
 import Material
 
 class MainViewController: UIViewController {
-    var userInfo: UserInfo? { didSet { self.userInfoLabel = self.userInfo?.label } }
-    var userInfoLabel: UILabel? = UIElements.label("")
-    let logoffButton = UIElements.flatButton("Logoff")
-    let transactionButton = UIElements.raisedButton("Make Transaction")
-    let tableView = UITableView()
-    var transactions: [Transaction] = [] {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
+    var userInfo: UserInfo? { didSet { self.updateUserInfo(self.userInfo) } }
+    var transactions: [Transaction] = [] { didSet { self.transactionsTableView.reloadData() } }
+    
+    @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var transactionsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIElements.configureViewController(self)
-        self.view.layout(self.userInfoLabel!).top(32).left(32).width(300)
-        self.view.layout(self.logoffButton).right(32).width(50).top(28)
-        self.view.layout(self.transactionButton).left(32).right(32).top(64)
-        self.view.layout(self.tableView).left(32).right(32).top(96).bottom(-32)
-        self.logoffButton.titleColor = Color.blueGrey.darken3
-        self.tableView.dataSource = self
-        self.tableView.register(TransactionCell.nib, forCellReuseIdentifier: TransactionCell.identifier)
-        self.logoffButton.addTarget(self, action: #selector(self.logoffPressed(_:)), for: .touchUpInside)
-        self.transactionButton.addTarget(self, action: #selector(self.transactionPressed(_:)), for: .touchUpInside)
+        self.transactionsTableView.dataSource = self
+        self.transactionsTableView.register(TransactionCell.nib, forCellReuseIdentifier: TransactionCell.identifier)
+        self.transactionsTableView.rowHeight = UITableViewAutomaticDimension
+
+        let attributes = [NSAttributedStringKey.font: UIElements.Font.bold(with: 12.0)!]
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logoff", style: .plain, target: self, action: #selector(self.logoffPressed(_:)))
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(attributes, for: .selected)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New transaction", style: .plain, target: self, action: #selector(self.transactionPressed(_:)))
+        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
+        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes(attributes, for: .selected)
 
         APIClient.default.info()
             .done { self.userInfo = $0 }
@@ -46,9 +43,15 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController {
+    func updateUserInfo(_ userInfo: UserInfo?) {
+        guard let userInfo = userInfo else { return }
+        self.navigationItem.title = "\(userInfo.name) (\(userInfo.email))"
+        self.balanceLabel.text = String.init(format: "$%.2f", userInfo.balance)
+    }
+    
     @objc func logoffPressed(_ sender: FlatButton) {
         APIClient.default.logoff()
-        self.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
 
     @objc func transactionPressed(_ sender: RaisedButton) {

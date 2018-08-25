@@ -40,19 +40,6 @@ struct UserInfo: Codable {
 }
 
 extension UserInfo {
-    var label: UILabel {
-        let result = UIElements.label(nil)
-        let attributes = [
-            [NSAttributedStringKey.font: UIElements.Font.bold(with: 16.0)!, NSAttributedStringKey.foregroundColor: Color.blue.darken4],
-            [NSAttributedStringKey.font: UIElements.Font.regular(with: 12.0)!, NSAttributedStringKey.foregroundColor: Color.black, NSAttributedStringKey.baselineOffset: 1],
-            [NSAttributedStringKey.font: UIElements.Font.bold(with: 16.0)!, NSAttributedStringKey.foregroundColor: Color.black],
-            [NSAttributedStringKey.font: UIElements.Font.bold(with: 16.0)!, NSAttributedStringKey.foregroundColor: Color.black]
-        ]
-        result.attributedText = UserInfo.buildAttributedString([self.name, " (\(self.email))", " - ", "$\(self.balance)"], attributes: attributes)
-        result.textAlignment = .left
-        return result
-    }
-    
     static func buildAttributedString(_ strings: [String], attributes: [[NSAttributedStringKey: Any]]) -> NSAttributedString? {
         guard strings.count == attributes.count else {
             return nil
