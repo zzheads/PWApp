@@ -41,8 +41,11 @@ class LoginViewController: UIViewController {
         if self.rememberMeSwitch.isOn {
             self.store?.setValue(self.emailField.text, forKeyPath: self.emailKey)
             self.store?.setValue(self.passwordField.text, forKeyPath: self.passKey)
-            self.store?.setValue(self.rememberMeSwitch.isOn as Bool, forKeyPath: self.rememberKey)
+        } else {
+            self.store?.setValue(nil, forKeyPath: self.emailKey)
+            self.store?.setValue(nil, forKeyPath: self.passKey)
         }
+        self.store?.setValue(self.rememberMeSwitch.isOn as Bool, forKeyPath: self.rememberKey)
     }
 }
 

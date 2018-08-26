@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A608DD0B2132B22B0026D2B8 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608DD0A2132B22B0026D2B8 /* TransactionDetailsViewController.swift */; };
 		A6293E3A2130A89300B1AC67 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6293E392130A89300B1AC67 /* TransactionCell.xib */; };
 		A6293E3C2130AAF700B1AC67 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6293E3B2130AAF700B1AC67 /* TransactionCell.swift */; };
 		A6293E3E2130AD4800B1AC67 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6293E3D2130AD4800B1AC67 /* TransactionViewController.swift */; };
 		A68F640F212FE98400A860BF /* UIViewController +.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F640E212FE98400A860BF /* UIViewController +.swift */; };
 		A68F6411212FEC7900A860BF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F6410212FEC7900A860BF /* RegisterViewController.swift */; };
-		A68F6415212FF45C00A860BF /* UIView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F6414212FF45C00A860BF /* UIView +.swift */; };
 		A68F64172130000400A860BF /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F64162130000400A860BF /* UIElements.swift */; };
 		A68F641921300AE700A860BF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F641821300AE700A860BF /* APIClient.swift */; };
 		A68F641B21301C2D00A860BF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F641A21301C2D00A860BF /* MainViewController.swift */; };
@@ -30,7 +30,7 @@
 		A6994622212EF39D005B9189 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6994621212EF39D005B9189 /* Token.swift */; };
 		A6994624212F188D005B9189 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6994623212F188D005B9189 /* Transaction.swift */; };
 		A6994626212F1E0C005B9189 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6994625212F1E0C005B9189 /* UserInfo.swift */; };
-		A6994628212F1F2F005B9189 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6994627212F1F2F005B9189 /* UserList.swift */; };
+		A6994628212F1F2F005B9189 /* UserShort.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6994627212F1F2F005B9189 /* UserShort.swift */; };
 		A6994633212F2D5B005B9189 /* RobotoCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A699462C212F2D5B005B9189 /* RobotoCondensed-BoldItalic.ttf */; };
 		A6994634212F2D5B005B9189 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A699462D212F2D5B005B9189 /* RobotoCondensed-Light.ttf */; };
 		A6994635212F2D5B005B9189 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A699462E212F2D5B005B9189 /* RobotoCondensed-Bold.ttf */; };
@@ -45,12 +45,12 @@
 /* Begin PBXFileReference section */
 		4E3B83EE5E1C72E4A565C236 /* Pods_Parrot_Wings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parrot_Wings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		821F20CB13A959FCC4DA04D0 /* Pods-Parrot Wings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parrot Wings.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parrot Wings/Pods-Parrot Wings.debug.xcconfig"; sourceTree = "<group>"; };
+		A608DD0A2132B22B0026D2B8 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
 		A6293E392130A89300B1AC67 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		A6293E3B2130AAF700B1AC67 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		A6293E3D2130AD4800B1AC67 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		A68F640E212FE98400A860BF /* UIViewController +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController +.swift"; sourceTree = "<group>"; };
 		A68F6410212FEC7900A860BF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		A68F6414212FF45C00A860BF /* UIView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView +.swift"; sourceTree = "<group>"; };
 		A68F64162130000400A860BF /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
 		A68F641821300AE700A860BF /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = SOURCE_ROOT; };
 		A68F641A21301C2D00A860BF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		A6994621212EF39D005B9189 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		A6994623212F188D005B9189 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		A6994625212F1E0C005B9189 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		A6994627212F1F2F005B9189 /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
+		A6994627212F1F2F005B9189 /* UserShort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserShort.swift; sourceTree = "<group>"; };
 		A699462C212F2D5B005B9189 /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
 		A699462D212F2D5B005B9189 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		A699462E212F2D5B005B9189 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 				A6994621212EF39D005B9189 /* Token.swift */,
 				A6994623212F188D005B9189 /* Transaction.swift */,
 				A6994625212F1E0C005B9189 /* UserInfo.swift */,
-				A6994627212F1F2F005B9189 /* UserList.swift */,
+				A6994627212F1F2F005B9189 /* UserShort.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +158,7 @@
 				A68F64162130000400A860BF /* UIElements.swift */,
 				A68F641A21301C2D00A860BF /* MainViewController.swift */,
 				A6293E3D2130AD4800B1AC67 /* TransactionViewController.swift */,
+				A608DD0A2132B22B0026D2B8 /* TransactionDetailsViewController.swift */,
 				A6CF53A72131D81E00F183EA /* Main.storyboard */,
 			);
 			path = View;
@@ -169,7 +170,6 @@
 				A699461B212EDF30005B9189 /* JSON.swift */,
 				A69945FC212EDB46005B9189 /* AppDelegate.swift */,
 				A68F640E212FE98400A860BF /* UIViewController +.swift */,
-				A68F6414212FF45C00A860BF /* UIView +.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -313,16 +313,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Parrot Wings/Pods-Parrot Wings-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
-				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -354,7 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6994628212F1F2F005B9189 /* UserList.swift in Sources */,
+				A6994628212F1F2F005B9189 /* UserShort.swift in Sources */,
 				A6994620212EE803005B9189 /* WebService.swift in Sources */,
 				A6293E3C2130AAF700B1AC67 /* TransactionCell.swift in Sources */,
 				A6994622212EF39D005B9189 /* Token.swift in Sources */,
@@ -364,8 +362,8 @@
 				A6994624212F188D005B9189 /* Transaction.swift in Sources */,
 				A68F641B21301C2D00A860BF /* MainViewController.swift in Sources */,
 				A69945FF212EDB46005B9189 /* LoginViewController.swift in Sources */,
+				A608DD0B2132B22B0026D2B8 /* TransactionDetailsViewController.swift in Sources */,
 				A68F641921300AE700A860BF /* APIClient.swift in Sources */,
-				A68F6415212FF45C00A860BF /* UIView +.swift in Sources */,
 				A69945FD212EDB46005B9189 /* AppDelegate.swift in Sources */,
 				A6293E3E2130AD4800B1AC67 /* TransactionViewController.swift in Sources */,
 				A6994619212EDDA2005B9189 /* User.swift in Sources */,

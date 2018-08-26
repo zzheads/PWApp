@@ -6,7 +6,6 @@
 //  Copyright © 2018 Алексей Папин. All rights reserved.
 //
 
-import Material
 import UIKit
 
 extension UIViewController {

@@ -5,7 +5,7 @@ use_frameworks!
 target 'Parrot Wings' do
     pod 'Alamofire', '~> 4.7'
     pod 'PromiseKit', '~> 6.0'
-    pod 'Material', '~> 2.0'
+    pod 'SearchTextField'
 end
 
 post_install do |installer|

@@ -19,7 +19,14 @@ final class WebService {
             resource.request.responseJSON { response in
                 switch response.result {
                 case .success(let value):
-                    guard let json = value as? JSON, let object = T(from: json) else { return }
+                    guard let json = value as? JSON else {
+                        seal.reject(NSError(domain: "", code: 410, userInfo: [NSLocalizedDescriptionKey:"Serialization error, value: \(value) is not json"]))
+                        return
+                    }
+                    guard let object = T(from: json) else {
+                        seal.reject(NSError(domain: "", code: 410, userInfo: [NSLocalizedDescriptionKey:"Serialization error, can't parse \(T.self) from json: \(json)"]))
+                        return
+                    }
                     seal.fulfill(object)
                     
                 case .failure(let error):
@@ -34,7 +41,14 @@ final class WebService {
             resource.request.responseJSON { response in
                 switch response.result {
                 case .success(let value):
-                    guard let json = value as? JSON, let objects = [T](from: json) else { return }
+                    guard let json = value as? [JSON] else {
+                        seal.reject(NSError(domain: "", code: 410, userInfo: [NSLocalizedDescriptionKey:"Serialization error, value: \(value) is not json array"]))
+                        return
+                    }
+                    guard let objects = [T](json) else {
+                        seal.reject(NSError(domain: "", code: 410, userInfo: [NSLocalizedDescriptionKey:"Serialization error, can't parse \([T].self) from json array: \(json)"]))
+                        return
+                    }
                     seal.fulfill(objects)
                     
                 case .failure(let error):

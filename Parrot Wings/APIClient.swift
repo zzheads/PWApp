@@ -36,22 +36,46 @@ final class APIClient {
     }
     
     func info() -> Promise<UserInfo> {
-        return Promise<UserInfo>() { seal in
+        return Promise<UserInfo>() { resolver in
             guard let token = self.token else {
-                seal.reject(error("You can not get user info, you are not logged"))
+                resolver.reject(error("You are not logged"))
                 return
             }
-            service.fetchObject(resource: UserInfo.loggedUser(token)).done({ seal.fulfill($0) }).catch({ seal.reject($0) })
+            service.fetchObject(resource: UserInfo.loggedUser(token)).done({ resolver.fulfill($0) }).catch({ resolver.reject($0) })
         }
     }
     
     func transactions() -> Promise<TransactionsList> {
-        return Promise<TransactionsList>() { seal in
+        return Promise<TransactionsList>() { resolver in
             guard let token = self.token else {
-                seal.reject(error("You can not get user info, you are not logged"))
+                resolver.reject(error("You are not logged"))
                 return
             }
-            self.service.fetchObject(resource: TransactionsList.transactions(token)).done({ seal.fulfill($0) }).catch({ seal.reject($0) })
+            self.service.fetchObject(resource: TransactionsList.transactions(token)).done({ resolver.fulfill($0) }).catch({ resolver.reject($0) })
+        }
+    }
+    
+    func users(filter: String) -> Promise<[UserShort]> {
+        return Promise<[UserShort]>() { resolver in
+            guard let token = self.token else {
+                resolver.reject(error("You are not logged"))
+                return
+            }
+            guard !filter.isEmpty else {
+                resolver.reject(error("Filter string is empty"))
+                return
+            }
+            self.service.fetchArray(resource: UserShort.filteredList(token, filter: filter)).done{resolver.fulfill($0)}.catch{resolver.reject($0)}
+        }
+    }
+    
+    func makeTransaction(username: String, amount: Double) -> Promise<TransactionToken> {
+        return Promise<TransactionToken>() { resolver in
+            guard let token = self.token else {
+                resolver.reject(error("You are not logged"))
+                return
+            }
+            self.service.fetchObject(resource: TransactionToken.createTransaction(token, name: username, amount: amount)).done{resolver.fulfill($0)}.catch{resolver.reject($0)}
         }
     }
 }

@@ -7,7 +7,6 @@
 //
 
 import Alamofire
-import Material
 
 struct UserInfoToken: Codable {
     var id      : Int
@@ -40,6 +39,11 @@ struct UserInfo: Codable {
 }
 
 extension UserInfo {
+    func updateView(navigationItem: UINavigationItem?, balanceLabel: UILabel) {
+        navigationItem?.title = "\(self.name) (\(self.email))"
+        balanceLabel.text = String.init(format: "$%.2f", self.balance)
+    }
+    
     static func buildAttributedString(_ strings: [String], attributes: [[NSAttributedStringKey: Any]]) -> NSAttributedString? {
         guard strings.count == attributes.count else {
             return nil

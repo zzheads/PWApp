@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Material
 
 class TransactionCell: UITableViewCell {
     static let identifier = "\(TransactionCell.self)"
@@ -19,9 +18,20 @@ class TransactionCell: UITableViewCell {
     @IBOutlet weak var balanceLabel: UILabel!
     
     func configure(with transaction: Transaction) {
-        self.dateLabel.text = "\(transaction.date)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yy"
+        if let date = transaction.dateFormatted {
+            self.dateLabel.text = dateFormatter.string(from: date)
+        } else {
+            self.dateLabel.text = "\(transaction.date)"
+        }
         self.userLabel.text = transaction.username
-        self.amountLabel.text = "$\(transaction.amount)"
-        self.balanceLabel.text = "$\(transaction.balance)"
+        self.amountLabel.text = String.init(format: "$%.2f", transaction.amount)
+        self.balanceLabel.text = String.init(format: "$%.2f", transaction.balance)
+        if transaction.amount > 0 {
+            self.amountLabel.textColor = .green
+        } else {
+            self.amountLabel.textColor = .red
+        }
     }
 }
