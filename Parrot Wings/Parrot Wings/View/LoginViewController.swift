@@ -8,11 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-    fileprivate let store = UserDefaults(suiteName: "Parrot Wings Application")
-    fileprivate let emailKey = "email key"
-    fileprivate let passKey = "password key"
-    fileprivate let rememberKey = "remember key"
+class LoginViewController: UIViewController, LoginView {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -22,12 +18,7 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Loading email/pass values if exists
-        self.emailField.text = self.store?.value(forKeyPath: self.emailKey) as? String
-        self.passwordField.text = self.store?.value(forKeyPath: self.passKey) as? String
-        if let rememberMe = self.store?.value(forKeyPath: self.rememberKey) as? Bool {
-            self.rememberMeSwitch.isOn = rememberMe
-        }
+        self.loadDefaults()
     }
     
     override func viewDidLoad() {
@@ -37,15 +28,7 @@ class LoginViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        // Store login/pass if switch "Remember me" is on
-        if self.rememberMeSwitch.isOn {
-            self.store?.setValue(self.emailField.text, forKeyPath: self.emailKey)
-            self.store?.setValue(self.passwordField.text, forKeyPath: self.passKey)
-        } else {
-            self.store?.setValue(nil, forKeyPath: self.emailKey)
-            self.store?.setValue(nil, forKeyPath: self.passKey)
-        }
-        self.store?.setValue(self.rememberMeSwitch.isOn as Bool, forKeyPath: self.rememberKey)
+        self.saveDefaults()
     }
 }
 

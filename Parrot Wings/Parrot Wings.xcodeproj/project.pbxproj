@@ -11,6 +11,9 @@
 		A6293E3A2130A89300B1AC67 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6293E392130A89300B1AC67 /* TransactionCell.xib */; };
 		A6293E3C2130AAF700B1AC67 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6293E3B2130AAF700B1AC67 /* TransactionCell.swift */; };
 		A6293E3E2130AD4800B1AC67 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6293E3D2130AD4800B1AC67 /* TransactionViewController.swift */; };
+		A6344A192133D5910064AABB /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6344A182133D5910064AABB /* AppError.swift */; };
+		A6344A1B2133D81F0064AABB /* UserDefaults +.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6344A1A2133D81F0064AABB /* UserDefaults +.swift */; };
+		A6344A1D2133DEB30064AABB /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6344A1C2133DEB30064AABB /* Segue.swift */; };
 		A68F640F212FE98400A860BF /* UIViewController +.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F640E212FE98400A860BF /* UIViewController +.swift */; };
 		A68F6411212FEC7900A860BF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F6410212FEC7900A860BF /* RegisterViewController.swift */; };
 		A68F64172130000400A860BF /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F64162130000400A860BF /* UIElements.swift */; };
@@ -49,6 +52,9 @@
 		A6293E392130A89300B1AC67 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		A6293E3B2130AAF700B1AC67 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		A6293E3D2130AD4800B1AC67 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		A6344A182133D5910064AABB /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		A6344A1A2133D81F0064AABB /* UserDefaults +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults +.swift"; sourceTree = "<group>"; };
+		A6344A1C2133DEB30064AABB /* Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
 		A68F640E212FE98400A860BF /* UIViewController +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController +.swift"; sourceTree = "<group>"; };
 		A68F6410212FEC7900A860BF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A68F64162130000400A860BF /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
@@ -160,6 +166,7 @@
 				A6293E3D2130AD4800B1AC67 /* TransactionViewController.swift */,
 				A608DD0A2132B22B0026D2B8 /* TransactionDetailsViewController.swift */,
 				A6CF53A72131D81E00F183EA /* Main.storyboard */,
+				A6344A1C2133DEB30064AABB /* Segue.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,6 +177,7 @@
 				A699461B212EDF30005B9189 /* JSON.swift */,
 				A69945FC212EDB46005B9189 /* AppDelegate.swift */,
 				A68F640E212FE98400A860BF /* UIViewController +.swift */,
+				A6344A1A2133D81F0064AABB /* UserDefaults +.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -190,6 +198,7 @@
 				A699461D212EE0A0005B9189 /* Resource.swift */,
 				A699461F212EE803005B9189 /* WebService.swift */,
 				A68F641821300AE700A860BF /* APIClient.swift */,
+				A6344A182133D5910064AABB /* AppError.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -354,6 +363,7 @@
 			files = (
 				A6994628212F1F2F005B9189 /* UserShort.swift in Sources */,
 				A6994620212EE803005B9189 /* WebService.swift in Sources */,
+				A6344A192133D5910064AABB /* AppError.swift in Sources */,
 				A6293E3C2130AAF700B1AC67 /* TransactionCell.swift in Sources */,
 				A6994622212EF39D005B9189 /* Token.swift in Sources */,
 				A68F6411212FEC7900A860BF /* RegisterViewController.swift in Sources */,
@@ -368,7 +378,9 @@
 				A6293E3E2130AD4800B1AC67 /* TransactionViewController.swift in Sources */,
 				A6994619212EDDA2005B9189 /* User.swift in Sources */,
 				A699461E212EE0A0005B9189 /* Resource.swift in Sources */,
+				A6344A1B2133D81F0064AABB /* UserDefaults +.swift in Sources */,
 				A6994626212F1E0C005B9189 /* UserInfo.swift in Sources */,
+				A6344A1D2133DEB30064AABB /* Segue.swift in Sources */,
 				A699461C212EDF30005B9189 /* JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
