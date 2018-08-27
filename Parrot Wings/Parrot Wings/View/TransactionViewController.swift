@@ -24,7 +24,7 @@ class TransactionViewController: UIViewController {
         let attributes = [NSAttributedStringKey.font: UIElements.Font.bold(with: 12.0)!]
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.cancelPressed(_:)))
         self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
-        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(attributes, for: .selected)
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(attributes, for: .highlighted)
         
         self.transferButton.addTarget(self, action: #selector(self.transferPressed(_:)), for: .touchUpInside)
         self.usernameField.addTarget(self, action: #selector(self.userValueChanged(_:)), for: .editingChanged)
@@ -54,7 +54,7 @@ extension TransactionViewController {
             let username = self.usernameField.text,
             !username.isEmpty
             else {
-                self.showAlert(title: "Transaction error:", message: "Receiver username must be not empty, and amount of transaction must be more than 0 and less than your current balance", style: .alert)
+                self.showAlert(AppError.transaction(message: "Receiver username must be not empty, and amount of transaction must be more than 0 and less than your current balance").error)
                 return
             }
         
@@ -63,9 +63,9 @@ extension TransactionViewController {
             .done { transaction in
                 self.userInfo.balance -= amount
                 self.userInfo.updateView(navigationItem: self.navigationItem, balanceLabel: self.balanceLabel)
-                self.showAlert(title: "Transaction complete", message: "Transaction:\n \(transaction.trans_token.date),\n\(transaction.trans_token.id),\n\(transaction.trans_token.username),\n\(transaction.trans_token.amount)\n is successfully completed", style: .alert) { self.performSegue(withIdentifier: "unwindToMainController", sender: self) }
+                self.showAlert(title: "Transaction complete", message: "Transaction:\n \(transaction.trans_token.date),\n\(transaction.trans_token.id),\n\(transaction.trans_token.username),\n\(transaction.trans_token.amount)\n is successfully completed", style: .alert) { self.performSegue(withIdentifier: Segue.unwind.rawValue, sender: self) }
             }
-            .catch { error in self.showAlert(title: "API Error", message: error.localizedDescription, style: .alert) }
+            .catch { error in self.showAlert(error) }
             .finally { self.transferButton.isEnabled = true }
     }
 
@@ -74,7 +74,7 @@ extension TransactionViewController {
         self.usernameField.isEnabled = false
         APIClient.default.users(filter: filter)
             .done { users in self.usernameField.filterStrings(users.compactMap{$0.name}) }
-            .catch { error in self.showAlert(title: "API Error", message: error.localizedDescription, style: .alert) }
+            .catch { error in self.showAlert(error) }
             .finally {
                 self.usernameField.isEnabled = true
                 self.usernameField.becomeFirstResponder()

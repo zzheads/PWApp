@@ -15,4 +15,8 @@ extension UIViewController {
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func showAlert(_ error: Error, completion: (() -> Void)? = nil) {
+        self.showAlert(title: "Error", message: error.localizedDescription, style: .alert, completion: completion)
+    }
 }

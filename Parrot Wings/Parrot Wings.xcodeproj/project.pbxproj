@@ -150,6 +150,7 @@
 				A6994623212F188D005B9189 /* Transaction.swift */,
 				A6994625212F1E0C005B9189 /* UserInfo.swift */,
 				A6994627212F1F2F005B9189 /* UserShort.swift */,
+				A699461D212EE0A0005B9189 /* Resource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,12 +162,10 @@
 				A6994605212EDB46005B9189 /* LaunchScreen.storyboard */,
 				A69945FE212EDB46005B9189 /* LoginViewController.swift */,
 				A68F6410212FEC7900A860BF /* RegisterViewController.swift */,
-				A68F64162130000400A860BF /* UIElements.swift */,
 				A68F641A21301C2D00A860BF /* MainViewController.swift */,
 				A6293E3D2130AD4800B1AC67 /* TransactionViewController.swift */,
 				A608DD0A2132B22B0026D2B8 /* TransactionDetailsViewController.swift */,
 				A6CF53A72131D81E00F183EA /* Main.storyboard */,
-				A6344A1C2133DEB30064AABB /* Segue.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,6 +173,8 @@
 		A6994612212EDB70005B9189 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A68F64162130000400A860BF /* UIElements.swift */,
+				A6344A1C2133DEB30064AABB /* Segue.swift */,
 				A699461B212EDF30005B9189 /* JSON.swift */,
 				A69945FC212EDB46005B9189 /* AppDelegate.swift */,
 				A68F640E212FE98400A860BF /* UIViewController +.swift */,
@@ -195,7 +196,6 @@
 		A699461A212EDEFE005B9189 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A699461D212EE0A0005B9189 /* Resource.swift */,
 				A699461F212EE803005B9189 /* WebService.swift */,
 				A68F641821300AE700A860BF /* APIClient.swift */,
 				A6344A182133D5910064AABB /* AppError.swift */,

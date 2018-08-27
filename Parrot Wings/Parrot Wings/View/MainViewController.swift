@@ -40,11 +40,11 @@ class MainViewController: UIViewController {
         let attributes = [NSAttributedStringKey.font: UIElements.Font.bold(with: 12.0)!]
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logoff", style: .plain, target: self, action: #selector(self.logoffPressed(_:)))
         self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
-        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(attributes, for: .selected)
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(attributes, for: .highlighted)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New transaction", style: .plain, target: self, action: #selector(self.transactionPressed(_:)))
         self.navigationItem.rightBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
-        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes(attributes, for: .selected)
+        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes(attributes, for: .highlighted)
         
         self.sortControl.addTarget(self, action: #selector(self.sortChanged(_:)), for: .valueChanged)
         self.sortControl.setTitleTextAttributes([NSAttributedStringKey.font: UIElements.Font.regular(with: 11.0)!], for: .normal)
@@ -55,7 +55,7 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         APIClient.default.info()
             .done { self.userInfo = $0 }
-            .catch { self.showAlert(title: "API Error", message: $0.localizedDescription, style: .alert) }
+            .catch { self.showAlert($0) }
             .finally {
                 APIClient.default.transactions()
                     .done({ self.transactions = $0.trans_token.sorted(by: {$0.date > $1.date}) })
@@ -80,17 +80,17 @@ extension MainViewController {
     }
 
     @objc func transactionPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "toTransaction", sender: self)
+        self.performSegue(withIdentifier: Segue.transaction.rawValue, sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let segueId = segue.identifier else { return }
-        if segueId == "toTransaction" {
+        if segueId == Segue.transaction.rawValue {
             let transferController = segue.destination as! TransactionViewController
             transferController.userInfo = self.userInfo
         }
         
-        if segueId == "toTransactionDetails" {
+        if segueId == Segue.details.rawValue {
             let detailsController = segue.destination as! TransactionDetailsViewController
             detailsController.userInfo = self.userInfo
             if let selectedIndexPath = self.transactionsTableView.indexPathForSelectedRow {
@@ -120,6 +120,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "toTransactionDetails", sender: self)
+        self.performSegue(withIdentifier: Segue.details.rawValue, sender: self)
     }
 }

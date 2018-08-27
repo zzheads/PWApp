@@ -33,11 +33,6 @@
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="RobotoCondensed-Bold" family="Roboto Condensed" pointSize="12"/>
                         </textAttributes>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
-                                <color key="value" red="0.40463587969999998" green="0.63836392090000005" blue="0.77518900239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="FYz-3f-txe" kind="relationship" relationship="rootViewController" id="6ab-HT-B2a"/>
@@ -94,9 +89,6 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="4sQ-MI-cNb" kind="show" identifier="toMainUnlogged" id="xlg-ds-Jad"/>
-                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rAW-Ib-AjD">
                                 <rect key="frame" x="91" y="270" width="51" height="31"/>
@@ -119,9 +111,6 @@
                                 <state key="normal" title="or Register new user">
                                     <color key="titleColor" red="0.12984204290000001" green="0.31479621260000001" blue="0.44326625930000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="GPs-bj-E5V" kind="show" identifier="toRegister" id="fDR-3q-AtZ"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.5" green="0.75686274509999996" blue="0.75412326389999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -155,7 +144,8 @@
                         <outlet property="passwordField" destination="jPc-vr-xW9" id="iIP-rm-0LP"/>
                         <outlet property="registerButton" destination="KRy-EF-48l" id="iKa-FJ-Yat"/>
                         <outlet property="rememberMeSwitch" destination="rAW-Ib-AjD" id="ydn-CO-CXS"/>
-                        <segue destination="4sQ-MI-cNb" kind="show" identifier="toMainLogged" id="ize-5J-Oz6"/>
+                        <segue destination="4sQ-MI-cNb" kind="show" identifier="toMain" id="mso-F1-7Tx"/>
+                        <segue destination="GPs-bj-E5V" kind="show" identifier="toRegister" id="BJ2-3h-dZD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z0P-1E-KTq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -592,6 +582,5 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="4a5-C2-WL9"/>
-        <segue reference="ize-5J-Oz6"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -24,6 +24,9 @@ class LoginViewController: UIViewController, LoginView {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Login"
+        self.loginButton.addTarget(self, action: #selector(self.loginPressed(_:)), for: .touchUpInside)
+        self.registerButton.addTarget(self, action: #selector(self.registerPressed(_:)), for: .touchUpInside)
+        self.rememberMeSwitch.addTarget(self, action: #selector(self.rememberMeSwitched(_:)), for: .valueChanged)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -33,18 +36,23 @@ class LoginViewController: UIViewController, LoginView {
 }
 
 extension LoginViewController {
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        switch identifier {
-        case "toMainLogged"     : return true
-        case "toRegister"       : return true
-        case "toMainUnlogged"   :
-            guard let email = self.emailField.text, let password = self.passwordField.text, !email.isEmpty, !password.isEmpty else { return false }
-            APIClient.default.login(email: email, password: password)
-                .done { _ in self.performSegue(withIdentifier: "toMainLogged", sender: self) }
-                .catch { self.showAlert(title: "API Error", message: $0.localizedDescription, style: .alert) }
-            return false
-
-        default                 : return false
+    @objc func loginPressed(_ sender: UIButton) {
+        guard let email = self.emailField.text, let password = self.passwordField.text, !email.isEmpty, !password.isEmpty else { return }
+        
+        APIClient.default.login(email: email, password: password)
+            .done { _ in self.performSegue(withIdentifier: Segue.main.rawValue, sender: self) }
+            .catch { self.showAlert($0) }
+    }
+    
+    @objc func registerPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: Segue.register.rawValue, sender: self)
+    }
+    
+    @objc func rememberMeSwitched(_ sender: UISwitch) {
+        if sender.isOn {
+            self.saveDefaults()
+        } else {
+            self.clearDefaults()
         }
     }
 }

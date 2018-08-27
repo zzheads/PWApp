@@ -27,7 +27,7 @@ class TransactionDetailsViewController: UIViewController {
         let attributes = [NSAttributedStringKey.font: UIElements.Font.bold(with: 12.0)!]
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.cancelPressed(_:)))
         self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
-        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(attributes, for: .selected)
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(attributes, for: .highlighted)
         
         self.copyButton.addTarget(self, action: #selector(self.copyPressed(_:)), for: .touchUpInside)
     }
@@ -54,12 +54,12 @@ extension TransactionDetailsViewController {
     }
     
     @objc func copyPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "toCopyTransaction", sender: self)
+        self.performSegue(withIdentifier: Segue.copy.rawValue, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let segueId = segue.identifier else { return }
-        if segueId == "toCopyTransaction" {
+        if segueId == Segue.copy.rawValue {
             let transactionController = segue.destination as! TransactionViewController
             transactionController.userInfo = self.userInfo
             transactionController.transaction = self.transaction

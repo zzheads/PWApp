@@ -38,7 +38,7 @@ final class APIClient {
     func info() -> Promise<UserInfo> {
         return Promise<UserInfo>() { resolver in
             guard let token = self.token else {
-                resolver.reject(error("You are not logged"))
+                resolver.reject(AppError.notLogged.error)
                 return
             }
             service.fetchObject(resource: UserInfo.loggedUser(token)).done({ resolver.fulfill($0) }).catch({ resolver.reject($0) })
@@ -48,7 +48,7 @@ final class APIClient {
     func transactions() -> Promise<TransactionsList> {
         return Promise<TransactionsList>() { resolver in
             guard let token = self.token else {
-                resolver.reject(error("You are not logged"))
+                resolver.reject(AppError.notLogged.error)
                 return
             }
             self.service.fetchObject(resource: TransactionsList.transactions(token)).done({ resolver.fulfill($0) }).catch({ resolver.reject($0) })
@@ -58,11 +58,11 @@ final class APIClient {
     func users(filter: String) -> Promise<[UserShort]> {
         return Promise<[UserShort]>() { resolver in
             guard let token = self.token else {
-                resolver.reject(error("You are not logged"))
+                resolver.reject(AppError.notLogged.error)
                 return
             }
             guard !filter.isEmpty else {
-                resolver.reject(error("Filter string is empty"))
+                resolver.reject(AppError.filterStringEmpty.error)
                 return
             }
             self.service.fetchArray(resource: UserShort.filteredList(token, filter: filter)).done{resolver.fulfill($0)}.catch{resolver.reject($0)}
@@ -72,16 +72,10 @@ final class APIClient {
     func makeTransaction(username: String, amount: Double) -> Promise<TransactionToken> {
         return Promise<TransactionToken>() { resolver in
             guard let token = self.token else {
-                resolver.reject(error("You are not logged"))
+                resolver.reject(AppError.notLogged.error)
                 return
             }
             self.service.fetchObject(resource: TransactionToken.createTransaction(token, name: username, amount: amount)).done{resolver.fulfill($0)}.catch{resolver.reject($0)}
         }
-    }
-}
-
-extension APIClient {
-    fileprivate func error(_ description: String? = nil) -> NSError {
-        return NSError(domain: "Parrot Wings APIClient Error", code: 400, userInfo: [NSLocalizedDescriptionKey: description as Any])
     }
 }

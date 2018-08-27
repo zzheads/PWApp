@@ -15,6 +15,7 @@ protocol LoginView {
     
     func loadDefaults()
     func saveDefaults()
+    func clearDefaults()
 }
 
 extension LoginView {
@@ -30,10 +31,14 @@ extension LoginView {
             UserDefaults.store?.password = passwordField.text
             UserDefaults.store?.remember = rememberMeSwitch.isOn
         } else {
-            UserDefaults.store?.email = nil
-            UserDefaults.store?.password = nil
-            UserDefaults.store?.remember = nil
+            self.clearDefaults()
         }
+    }
+    
+    func clearDefaults() {
+        UserDefaults.store?.email = nil
+        UserDefaults.store?.password = nil
+        UserDefaults.store?.remember = nil
     }
 }
 
